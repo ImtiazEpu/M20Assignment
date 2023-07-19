@@ -18,10 +18,10 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });*/
-Route::controller(UserController::class)->group(function () {
-    Route::post( '/user-registration', 'UserRegistration' );
-    Route::post( '/user-login', 'UserLogin');
+Route::controller( UserController::class )->group( function () {
+    Route::post( '/registration', 'UserRegistration' );
+    Route::post( '/user-login', 'UserLogin' );
     Route::post( '/send-otp', 'SendOTPCode' );
-    Route::post( '/verify-otp', 'VerifyOTP');
-    Route::post( '/reset-password', 'ResetPassword');
-});
+    Route::post( '/verify-otp', 'VerifyOTP' );
+    Route::post( '/reset-password', 'ResetPassword' );
+} );

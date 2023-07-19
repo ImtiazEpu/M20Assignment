@@ -2,7 +2,7 @@ function showLoader() {
     document.getElementById('loader').classList.remove('hidden')
 }
 function hideLoader() {
-    document.getElementById('loader').classList.add('block')
+    document.getElementById('loader').classList.add('hidden')
 }
 
 function successToast(msg) {

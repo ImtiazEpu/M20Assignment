@@ -17,16 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 
 // Page Routes
-Route::controller(UserController::class)->group(function () {
-    Route::get('/login','LoginPage')->name('login');
-    Route::get('/registration','RegistrationPage')->name('registration');
-    Route::get('/sendOtp','SendOtpPage')->name('sendOtp');
-    Route::get('/verifyOtp','VerifyOTPPage');
-    Route::get('/resetPassword','ResetPasswordPage')->name('resetPassword');
-});
+Route::controller( UserController::class )->group( function () {
+    Route::get( '/login', 'LoginPage' )->name( 'login' );
+    Route::get( '/registration', 'RegistrationPage' )->name( 'registration' );
+    Route::get( '/sendOtp', 'SendOtpPage' )->name( 'sendOtp' );
+    Route::get( '/verifyOtp', 'VerifyOTPPage' );
+    Route::get( '/resetPassword', 'ResetPasswordPage' )->name( 'resetPassword' );
+} );
 
 
-Route::controller(DashboardController::class)->group(function () {
-    Route::get('/', 'DashboardPage')->middleware(['auth']);
-    Route::get('/dashboard', 'DashboardPage')->middleware(['auth'])->name('dashboard');
-});
+Route::controller( DashboardController::class )->group( function () {
+    Route::get( '/', 'DashboardPage' )->middleware( [ 'jwt.verify' ] );
+    Route::get( '/dashboard', 'DashboardPage' )->middleware( [ 'jwt.verify' ] )->name( 'dashboard' );
+} );

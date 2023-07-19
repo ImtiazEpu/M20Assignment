@@ -9,9 +9,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
-
+    <link href="{{asset('css/toastify.min.css')}}" rel="stylesheet" />
     <!-- Styles -->
     @vite('resources/css/app.css')
+
+    <script src="{{asset('js/toastify.js')}}"></script>
+    <script src="{{asset('js/axios.min.js')}}"></script>
+    <script src="{{asset('js/config.js')}}"></script>
 </head>
 
 <body class="h-full">
